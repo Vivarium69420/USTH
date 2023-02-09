@@ -3,6 +3,6 @@
 
 ---
 # For USTH students
-- Try to write the code yourself, Prof will check any coppy paste line. DON'T even think about only changing the varible names. 
+- Try to write the code yourself, Prof will check any copy and paste line. DON'T even think about only changing the varible names. 
 - This is just some idea you can use when doing your labworks
-- The last labwork isn't finished (it's too hard, and I'm still too lazy) 
+- The labwork 6 isn't finished (it's too hard, and I'm still too lazy) 
