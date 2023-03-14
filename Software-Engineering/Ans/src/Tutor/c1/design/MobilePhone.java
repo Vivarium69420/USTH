@@ -54,5 +54,109 @@ public class MobilePhone {
     @DomainConstraint(type = "Integer", min = MIN_YEAR)
     private int year;
 
+    @DomainConstraint(type = "Boolean")
     private boolean guaranteed;
+
+    //Constructor
+    public MobilePhone(
+            @AttrRef("manName") String manName,
+            @AttrRef("model") String model,
+            @AttrRef("color") char color,
+            @AttrRef("year") int year,
+            @AttrRef("guaranteed") int guaranteed) throws NotPossibleException{}
+
+    // Observer
+    @DOpt(type = OptType.Observer) @AttrRef("manName")
+    public String getManName() {
+        return manName;
+    }
+
+    @DOpt(type = OptType.Observer) @AttrRef("model")
+    public String getModel() {
+        return model;
+    }
+
+    @DOpt(type = OptType.Observer) @AttrRef("color")
+    public char getColor() {
+        return color;
+    }
+
+    @DOpt(type = OptType.Observer) @AttrRef("year")
+    public int getYear() {
+        return year;
+    }
+
+    // default
+    @DOpt(type = OptType.Default)
+    @Override
+    public String toString(){return "a";}
+
+    // helper
+    /**
+     * @effects
+     *      if this == obj
+     *          return true
+     *      else:
+     *          return false
+     *
+     */
+    @Override
+    public boolean equals(Object obj){return true;}
+
+
+    /**
+     * Validate manName against domain constraint
+     * @effects
+     *  if manName is valid
+     *      return true
+     *  else
+     *      return false
+     */
+    private boolean validateManName(String manName){return true;}
+
+    /**
+     * Validate model against domain constraint
+     * @effects
+     *  if model is valid
+     *      return true
+     *  else
+     *      return false
+     */
+    private boolean validateModel(String model){return true;}
+
+    /**
+     * Validate color against domain constraint
+     * @effects
+     *  if color is valid
+     *      return true
+     *  else
+     *      return false
+     */
+    private boolean validateColor(char color){return true;}
+
+    /**
+     * Validate color against domain constraint
+     * @effects
+     *  if color is valid
+     *      return true
+     *  else
+     *      return false
+     */
+    private boolean validateYear(int year){return true;}
+
+
+    /**
+     * @effects
+     *  if this satisfies abstract properties
+     *      return true
+     *  else:
+     *      return false
+     */
+    public boolean repOK(){
+        return true;
+    }
+    @DOpt(type = OptType.Observer) @AttrRef("guaranteed")
+    public boolean isGuaranteed() {
+        return guaranteed;
+    }
 }
