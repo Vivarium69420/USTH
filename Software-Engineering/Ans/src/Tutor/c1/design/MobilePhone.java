@@ -4,7 +4,6 @@ import utils.DOpt;
 import utils.DomainConstraint;
 import utils.NotPossibleException;
 import utils.OptType;
-import java.lang.reflect.Type;
 
 /**
  * @overview
@@ -85,6 +84,12 @@ public class MobilePhone {
     public int getYear() {
         return year;
     }
+    @DOpt(type = OptType.Observer) @AttrRef("guaranteed")
+    public boolean getGuaranteed(){return guaranteed;}
+
+    // mutator
+    @DOpt(type = OptType.Mutator) @AttrRef("guaranteed")
+    public boolean setGuaranteed(boolean guaranteed){return true;}
 
     // default
     @DOpt(type = OptType.Default)
@@ -135,9 +140,9 @@ public class MobilePhone {
     private boolean validateColor(char color){return true;}
 
     /**
-     * Validate color against domain constraint
+     * Validate year against domain constraint
      * @effects
-     *  if color is valid
+     *  if year is valid
      *      return true
      *  else
      *      return false
@@ -155,8 +160,5 @@ public class MobilePhone {
     public boolean repOK(){
         return true;
     }
-    @DOpt(type = OptType.Observer) @AttrRef("guaranteed")
-    public boolean isGuaranteed() {
-        return guaranteed;
-    }
+
 }
