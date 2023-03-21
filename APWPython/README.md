@@ -7,7 +7,7 @@
   - BI12-074:	Đoàn Đình Đăng
 ---
 ## Requirements
-	- Should contain everything that was mentioned in the practicals
+	- "Should" contain everything that were mentioned in the practicals
 	- Should have proper Model-View-Control
 	- "Do your code run?"
 ---
