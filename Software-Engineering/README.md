@@ -1,0 +1,8 @@
+- *NOTE*: 
+    - For Ass: Everything are validated via prof. automated grader
+    - For both Ass and Tutor: You will need the utils package to run
+- Ass:
+    - Ass1: 
+        - There are still some problems with Ass1, but I'm too lazy to fix it
+- Tutor:
+    - hehe

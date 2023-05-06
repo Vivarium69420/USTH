@@ -1,0 +1,251 @@
+---------------------
+Program Marker Report
+---------------------
+
++--Input:
+Program id: bi12_076
+Program's package directory: /data/projects/usth/SE/2023/assessment.marking/a1redo1/submission/Assignment1-Redo1/Đăng Mai Hải_114833_assignsubmission_file_/a1_bi12_076
+Solution program package: vn.edu.usth.se.model.a1
+Program type: null
+Test suite class: class vn.edu.usth.se.tcdefs.a1.TestSuiteStudentMan
+Marking function: vn.edu.usth.se.markingfunc.MarkingFuncStudentManRedo1
+Report directory: /data/projects/usth/SE/2023/assessment.marking/a1redo1/marks
+---
+
++--Design:
+  +--a1_bi12_076.Student:
+    +--Class header:
+    ClassInterface(s): 1.00
+    @overview: 0.00
+    @attributes: 1.00
+    ❌ @object: invalid location in the header spec.
+    @object: 0.00
+    @abstract_properties: 1.00
+
+    Class header Total: 0.60
+    ---
+    +--Representation:
+    Field: id: 1.00
+    Field: name: 1.00
+    Field: phoneNumber: 1.00
+    Field: address: 1.00
+
+    Representation Total: 1.00
+    ---
+    +--Operations:
+      +--Method: Student:
+      behaviour desc: ❌ (missing or incomplete)
+      parameters: ✔
+      score: 0.50
+      ---
+      +--Method: repOK:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: setPhoneNumber:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: setAddress:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: getPhoneNumber:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: toString:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: compareTo:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: getAddress:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: getName:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: setName:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: getId:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+
+    Operations Total: 0.96
+    ---
+
+  a1_bi12_076.Student Total: 0.90
+  ---
+  +--a1_bi12_076.UndergradStudent:
+    +--Class header:
+    @overview: 1.00
+    @abstract_properties: 1.00
+
+    Class header Total: 1.00
+    ---
+    +--Representation:
+
+    Representation Total: 1.00
+    ---
+    +--Operations:
+      +--Method: UndergradStudent:
+      behaviour desc: ❌ (missing or incomplete)
+      parameters: ✔
+      score: 0.50
+      ---
+      +--Method: toString:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+
+    Operations Total: 0.75
+    ---
+
+  a1_bi12_076.UndergradStudent Total: 0.88
+  ---
+  +--a1_bi12_076.PostgradStudent:
+    +--Class header:
+    @overview: 1.00
+    @attributes: 1.00
+    ❌ @object: invalid location in the header spec.
+    @object: 0.00
+    @abstract_properties: 1.00
+
+    Class header Total: 0.75
+    ---
+    +--Representation:
+    Field: gpa: 1.00
+
+    Representation Total: 1.00
+    ---
+    +--Operations:
+      +--Method: PostgradStudent:
+      behaviour desc: ❌ (missing or incomplete)
+      parameters: ✔
+      score: 0.50
+      ---
+      +--Method: repOK:
+      score: 0.0 (❌ incorrectly defined or missing)
+      ---
+      +--Method: setGpa:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: getGpa:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+      +--Method: toString:
+      behaviour desc: ✔
+      parameters: ✔
+      score: 1.00
+      ---
+
+    Operations Total: 0.70
+    ---
+
+  a1_bi12_076.PostgradStudent Total: 0.80
+  ---
+
+Design Total: 86.46
+---
+
++--Code Testing:
+  +--a1_bi12_076.Student:
+    +--Method: Student:
+    result: ❌ (expecting 'class utils.NotPossibleException' but not observed (for some tests))
+    score: 0.88
+    ---
+    +--Errors:
+    setName & getName: ❌ (result(s) of one or both are wrong (for some tests))
+    setPhoneNumber & getPhoneNumber: ❌ (result(s) of one or both are wrong (for some tests))
+    setAddress & getAddress: ❌ (result(s) of one or both are wrong (for some tests))
+    ---
+    +--Method: getId:
+    score: 1.00
+    ---
+    +--Method: setName:
+    score: 0.86
+    ---
+    +--Method: getName:
+    score: 0.86
+    ---
+    +--Method: setPhoneNumber:
+    score: 0.86
+    ---
+    +--Method: getPhoneNumber:
+    score: 0.86
+    ---
+    +--Method: setAddress:
+    score: 0.86
+    ---
+    +--Method: getAddress:
+    score: 0.86
+    ---
+    +--Method: toString:
+    score: 1.00
+    ---
+    +--Method: compareTo:
+    score: 1.00
+    ---
+
+  a1_bi12_076.Student Total: 0.89
+  ---
+  +--a1_bi12_076.UndergradStudent:
+    +--Method: UndergradStudent:
+    result: ❌ (expecting 'class utils.NotPossibleException' but not observed (for some tests))
+    score: 0.88
+    ---
+    +--Method: toString:
+    score: 1.00
+    ---
+
+  a1_bi12_076.UndergradStudent Total: 0.88
+  ---
+  +--a1_bi12_076.PostgradStudent:
+    +--Method: PostgradStudent:
+    result: ❌ (expecting 'class utils.NotPossibleException' but not observed (for some tests))
+    score: 0.90
+    ---
+    +--Method: setGpa:
+    score: 1.00
+    ---
+    +--Method: getGpa:
+    score: 1.00
+    ---
+    +--Method: toString:
+    score: 1.00
+    ---
+
+  a1_bi12_076.PostgradStudent Total: 0.94
+  ---
+
+Code Testing Total: 90.30
+---
+
++--Summary:
+
+Summary Total: 89.14
+---
+
