@@ -3,10 +3,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Read the wav file (mono)
-fs_no, data_no = wavfile.read('noNoise.wav')
-fs_low, data_low = wavfile.read('lowNoise.wav')
-fs_medium, data_medium = wavfile.read('mediumNoise.wav')
-fs_high, data_high = wavfile.read('highNoise.wav')
+fs_no, data_no = wavfile.read('sound_files/noNoise.wav')
+fs_low, data_low = wavfile.read('sound_files/lowNoise.wav')
+fs_medium, data_medium = wavfile.read('sound_files/mediumNoise.wav')
+fs_high, data_high = wavfile.read('sound_files/highNoise.wav')
 
 # Convert to mono
 data_no = data_no[:,0]
@@ -100,3 +100,9 @@ plt.title('High noise')
 plt.legend()
 plt.tight_layout()
 plt.show()
+
+# write the filtered data to a wav file 
+wavfile.write('noNoise_blackman.wav', fs_no, data_no_blackman)
+wavfile.write('lowNoise_blackman.wav', fs_low, data_low_blackman)
+wavfile.write('mediumNoise_blackman.wav', fs_medium, data_medium_blackman)
+wavfile.write('highNoise_blackman.wav', fs_high, data_high_blackman)
