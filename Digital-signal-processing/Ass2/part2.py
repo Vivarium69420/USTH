@@ -122,12 +122,12 @@ ax2.set_title('Filtered signal')
 plt.tight_layout()
 plt.show()
 
-# plot the input signal and the filtered signal in frequency domain
+# plot the input signal and the filtered signal in frequency domain using fft
 fig, (ax1, ax2) = plt.subplots(2, 1, sharex=True)
 fig.suptitle('Fig.11: Highpass filter ouput data in frequency domain')
-ax1.magnitude_spectrum(Input_1kHz_15kHz, Fs=48000)
+ax1.plot(np.abs(np.fft.fft(Input_1kHz_15kHz)))
 ax1.set_title('Input signal')
-ax2.magnitude_spectrum(Input_1kHz_15kHz_filtered, Fs=48000)
+ax2.plot(np.abs(np.fft.fft(Input_1kHz_15kHz_filtered)))
 ax2.set_title('Filtered signal')
 plt.tight_layout()
 plt.show()

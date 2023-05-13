@@ -119,6 +119,22 @@ bessel_1kHz = sig.lfilter(b_bessel, a_bessel, Input_1kHz_15kHz)
 # plt.tight_layout()
 # plt.show()
 
+# Plot the phase responses of the cherry, butter and bessel filter in rows of subplots
+fig, axs = plt.subplots(3, 1, figsize=(10, 8), sharex=True, sharey=True)
+fig.suptitle('IIR Comparison of Chebyshev, Butterworth and Bessel filters phase responses')
+w, h = sig.freqz(b_cherby, a_cherby)
+axs[0].plot(w, np.unwrap(np.angle(h)), 'r')
+axs[0].set_title('Chebyshev filter')
+w, h = sig.freqz(b_butter, a_butter)
+axs[1].plot(w, np.unwrap(np.angle(h)), 'b')
+axs[1].set_title('Butterworth filter')
+w, h = sig.freqz(b_bessel, a_bessel)
+axs[2].plot(w, np.unwrap(np.angle(h)), 'g')
+axs[2].set_title('Bessel filter')
+plt.tight_layout()
+plt.show()
+
+
 
 # # Plot the results in rows of 4 subplots
 # fig, axs = plt.subplots(4, 1, figsize=(10, 8), sharex=True, sharey=True)
@@ -134,16 +150,7 @@ bessel_1kHz = sig.lfilter(b_bessel, a_bessel, Input_1kHz_15kHz)
 # plt.tight_layout()
 # plt.show()
 
-# # Plot the results in rows of 4 subplots in the frequency domain
-# fig, axs = plt.subplots(4, 1, figsize=(10, 8), sharex=True, sharey=True)
-# fig.suptitle('Fig.8: IIR Comparison of Chebyshev, Butterworth and Bessel filters with order = 5 and cutoff = 1kHz in Frequency Domain')
-# axs[0].magnitude_spectrum(Input_1kHz_15kHz, Fs=fs, scale='dB', color='k')
-# axs[0].set_title('Input signal')
-# axs[1].magnitude_spectrum(cheby_1kHz, Fs=fs, scale='dB', color='r')
-# axs[1].set_title('Chebyshev filter')
-# axs[2].magnitude_spectrum(butter_1kHz, Fs=fs, scale='dB', color='b')
-# axs[2].set_title('Butterworth filter')
-# axs[3].magnitude_spectrum(bessel_1kHz, Fs=fs, scale='dB', color='g')
-# axs[3].set_title('Bessel filter')
-# plt.tight_layout()
-# plt.show()
+# # Plot the results in rows of 4 subplots in the frequency domain after applying FFT
+fig, axs = plt.subplots(4, 1, figsize=(10, 8), sharex=True, sharey=True)
+fig.suptitle('Fig.8: IIR Comparison of Chebyshev, Butterworth and Bessel filters with order = 5 and cutoff = 1kHz in Frequency Domain')
+
