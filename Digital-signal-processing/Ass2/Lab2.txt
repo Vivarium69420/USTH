@@ -1,0 +1,16 @@
+Lab 2 - Designing Filters
+Tung Tran Hoang
+
+Due May 13, 11:59 PM
+
+Part 1:
+    - Designing filters (FIR, IIR): labwork 1 but with different systems
+        - FIR filters (Bartlett, Hamming, Blackman)
+        - IIR filters (Chebyshev, Butterworth, Bessel)
+    - visualize the frequency representation (dB)
+    - Comparing input and output both in time domain and frequency domain
+    - Are these filters different?
+Part 2:
+    - Implement a highpass filter to remove the low-frequency component in labwork 1
+Part 3:
+    - Create your own signal: record your voice, add noise and using filter to (partially) re move the noise
