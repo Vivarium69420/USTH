@@ -333,7 +333,6 @@ public class ProgStudentMan {
     else
       return engine.docIterator();
   }
-  
   /**************************************************************
    * ABOVE THIS LINE ARE GIVEN CODE. STUDENTS SHOULD READ THE SPECS 
    * BUT MUST NOT CHANGE ANYTHING!
@@ -345,7 +344,10 @@ public class ProgStudentMan {
    * @effects 
    *   initialise this to include an empty set of objects and an empty engine
    */
-  public ProgStudentMan()
+  public ProgStudentMan(){
+    this.objects = new TreeSet<>();
+    this.engine = new Engine();
+  }
   
   /**
    * @effects
@@ -355,7 +357,16 @@ public class ProgStudentMan {
    *     return a string containing each object in this.objects one per line
    */
   @Override
-  public String toString()
+  public String toString(){
+    if (this.objects.isEmpty()){
+      return "empty";
+    }
+    String result = "";
+    for (Object o : this.objects){
+      result += o.toString() + "\n";
+    }
+    return result;
+  }
 
   /**
    * @effects 
@@ -364,7 +375,12 @@ public class ProgStudentMan {
    *  else
    *    return false
    */
-  public boolean isEmpty()
+  public boolean isEmpty(){
+    if (this.objects == null){
+      return true;
+    }
+    return false;
+  }
   
   /**
    * @requires 
@@ -375,7 +391,13 @@ public class ProgStudentMan {
    *  else
    *    throws NotPossibleException 
    */
-  public Student createStudent(Object[] data)
+  public Student createStudent(Object[] data){
+    if (data[0] instanceof Integer && data[1] instanceof String && data[2] instanceof String && data[3] instanceof String){
+      return new Student((Integer) data[0], (String) data[1], (String) data[2], (String) data[3]);
+    }
+    else
+      throw new NotPossibleException("Data must contain id, name, phone, and address values (in that order)");
+  }
   
   /**
    * @requires 
@@ -386,7 +408,9 @@ public class ProgStudentMan {
    *  else
    *    throws NotPossibleException 
    */
-  public UndergradStudent createUndergradStudent(Object[] data) throws NotPossibleException
+  public UndergradStudent createUndergradStudent(Object[] data) throws NotPossibleException {
+
+  }
   
   /**
    * @requires 
@@ -397,14 +421,18 @@ public class ProgStudentMan {
    *  else
    *    throws NotPossibleException 
    */
-  public PostgradStudent createPostgradStudent(Object[] data) throws NotPossibleException
+  public PostgradStudent createPostgradStudent(Object[] data) throws NotPossibleException{
+
+  }
   
   /**
    * @effects 
    *   add c to this.objects and 
    *   add to this.engine a Doc object created from c.toHtmlDoc
    */
-  public void addStudent(Student c)
+  public void addStudent(Student c){
+
+  }
   
   /**
    * @requires words != null /\ words.length > 0
@@ -415,6 +443,8 @@ public class ProgStudentMan {
    *   If fails to execute query using words
    *     throws NotPossibleException
    */
-  public Query search(String[] words) throws NotPossibleException
+  public Query search(String[] words) throws NotPossibleException{
+
+  }
 }
 
