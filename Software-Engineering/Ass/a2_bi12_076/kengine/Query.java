@@ -242,4 +242,18 @@ public class Query {
     else
       return null;
   } 
+
+  /**
+   * @effects:
+   * return an Iterator of the query matches or null if no matches
+   *
+   */
+  public Iterator<DocCnt> getMatches() {
+    if (matches != null && !matches.isEmpty())
+      return matches.iterator();
+    else
+      return null;
+  }
+
+
 }
