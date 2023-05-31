@@ -1,4 +1,4 @@
-package a2_bi12_076.studentman;
+package studentman;
 import utils.AttrRef;
 import utils.DOpt;
 import utils.DomainConstraint;
@@ -92,12 +92,24 @@ public class PostgradStudent extends Student{
 	public String toString() {
 		StringBuilder sb = new StringBuilder("PostgradStudent: <");
     	sb.append("Id: ").append(getId()).append(", ")
-    	  .append("Name: ").append(getName()).append(", ")
+  .append("Name: ").append(getName()).append(", ")
     	  .append("Phone Number: ").append(getPhoneNumber()).append(", ")
     	  .append("Address: ").append(getAddress()).append(">");
     	return sb.toString();
 	}
-	
+  
+  /**
+   * @effects <pre>
+   * 			if this satisfies rep invariant
+   * 				return true
+   * 			else
+   * 				return false
+   * 			</pre>
+   */
+  @Override
+  public boolean repOK() {
+    return super.repOK() && validateGpa(gpa);
+  } 
 	/**
 	 * @effects <pre>
 	 * 			if id is valid
@@ -146,4 +158,17 @@ public class PostgradStudent extends Student{
 		else
 			return true;
 	}
+  
+  @Override
+	/**
+   * @effects <pre>
+   *      return a simple HTML document generated from the state of the current object
+   *      </pre>
+   */
+  public String toHtmlDoc(){
+    return 
+    "<html> <head><title>Student:" + getId() + "-" + getName() + "</title></head><body>" + getId() + getName() + getGpa() + getPhoneNumber() + getAddress() + "</body></html>";
+  }
+
+
 }

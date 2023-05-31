@@ -1,4 +1,4 @@
-package a2_bi12_076.studentman;
+package studentman;
 import utils.AttrRef;
 import utils.DomainConstraint;
 import utils.NotPossibleException;
@@ -32,7 +32,7 @@ import java.lang.String;
  * @author BI12-076 Mai Hai Dang
  *
  */
-public class Student implements Comparable<Student>{
+public class Student implements Comparable<Student>, Document{
 
 	private static final int MIN_STUDENT_ID = 1;
 	private static final int MAX_STUDENT_ID = 1000000000;
@@ -200,7 +200,17 @@ public class Student implements Comparable<Student>{
 			Student student = (Student) o;
 			return this.name.compareTo(student.name);
 	}
-	
+	/**
+   * @effects <pre>
+   *      return a simple HTML document generated from the state of the current object
+   *      </pre>
+   */
+  public String toHtmlDoc(){
+    return 
+    "<html> <head><title>Student:" + id + "-" + name + "</title></head><body>" + id + name + phoneNumber + address + "</body></html>";
+  }
+
+
 	/**
 	 * @effects <pre>
 	 * 			return a string representation of this object
@@ -271,4 +281,6 @@ public class Student implements Comparable<Student>{
 			return false;
 		return true;
 	}
+
+  
 }

@@ -1,4 +1,4 @@
-package a2_bi12_076.studentman;
+package studentman;
 import utils.AttrRef;
 import utils.DomainConstraint;
 import utils.NotPossibleException;
