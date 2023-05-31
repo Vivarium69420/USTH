@@ -248,12 +248,10 @@ public class Query {
    * return an Iterator of the query matches or null if no matches
    *
    */
-  public Iterator<DocCnt> getMatches() {
+  public Iterator<DocCnt> matchIterator() {
     if (matches != null && !matches.isEmpty())
       return matches.iterator();
     else
       return null;
   }
-
-
 }
