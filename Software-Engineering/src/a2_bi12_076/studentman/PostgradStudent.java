@@ -166,10 +166,12 @@ public class PostgradStudent extends Student{
    *      return a simple HTML document generated from the state of the current object
    *      </pre>
    */
-  public Doc toHtmlDoc(){
-    return 
-    "<html> <head><title>Student:" + getId() + "-" + getName() + "</title></head><body>" + getId() + getName() + getGpa() + getPhoneNumber() + getAddress() + "</body></html>";
-  }
-
-
+  
+    public String toHtmlDoc() {
+        return "<html>\n" +
+                "<head><title>PostgradStudent:" + getId() + "-" + getName() + "</title></head>\n" +
+                "<body>\n" +
+                getId() + " " + getName() + " " + getPhoneNumber() + " " + getAddress() + " " + getGpa() + "\n" +
+                "</body></html>";
+    }
 }
