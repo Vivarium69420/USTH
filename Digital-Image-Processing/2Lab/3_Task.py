@@ -35,10 +35,23 @@ def gaussian_noise(image, var):
     sigma = var ** 0.5
     gauss = np.random.normal(mean, sigma, image.shape)
     gauss = gauss.reshape(image.shape)
-    noisy = image + gauss
-    noisy = np.clip(noisy, 0, 255).astype(np.uint8)
-    return noisy
+    image = image + gauss
+    image = np.clip(image, 0, 255).astype(np.uint8)
+    return image 
 
+def periodic_noise(image, amp, freq):
+    """
+    Add periodic noise to the image
+    :param image: image to be processed
+    :param amp: amplitude of the periodic noise
+    :param freq: frequency of the periodic noise
+    :return: image with periodic noise
+    """
+    for row in range(image.shape[0]):
+        for col in range(image.shape[1]):
+            image[row][col] = image[row][col] + amp * np.sin(2 * np.pi * freq * row)
+    image = np.clip(image, 0, 255).astype(np.uint8)
+    return image 
 
 if __name__ == "__main__":
     img = cv2.imread('Lena.png')
@@ -48,6 +61,9 @@ if __name__ == "__main__":
 
     gaussian_Lena = gaussian_noise(img, 0)
     cv2.imshow('Gaussian Lena', gaussian_Lena)
+
+    periodic_Lena = periodic_noise(img, 50, 0.1)
+    cv2.imshow('Periodic Lena', periodic_Lena)
 
 
     wi.wait() 
