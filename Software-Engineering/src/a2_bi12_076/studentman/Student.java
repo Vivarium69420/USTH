@@ -1,5 +1,4 @@
 package a2_bi12_076.studentman;
-import a2_bi12_076.kengine.Doc;
 import utils.AttrRef;
 import utils.DomainConstraint;
 import utils.NotPossibleException;
@@ -207,8 +206,12 @@ public class Student implements Comparable<Student>, Document{
 	 *      </pre>
 	 */
   public String toHtmlDoc(){
-    return 
-    "<html> <head><title>Student:" + id + "-" + name + "</title></head><body>" + id + name + phoneNumber + address + "</body></html>";
+    return "<html>\n" +
+            "<head><title>Student:" + id + "-" + name + "</title></head>\n" +
+            "<body>\n" +
+                id + " " + name + " " + phoneNumber + " " + address + "\n" +
+            "</body></html>";
+
   }
 
 
