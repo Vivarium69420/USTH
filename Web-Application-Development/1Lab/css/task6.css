@@ -1,0 +1,15 @@
+#first-para {
+  font-size: 0.5em;
+}
+
+.second-para,
+p:nth-child(3) {
+  color: red;
+}
+
+p:nth-child(3) {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}

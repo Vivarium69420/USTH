@@ -1,0 +1,42 @@
+:root {
+  --clr-neon: #ee19b3;
+}
+
+body {
+  background: #050102;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  opacity: 1;
+
+  transition: all ease-in-out 0.3s;
+}
+
+img {
+  width: 300px;
+  height: 300px;
+}
+
+.images {
+  width: 100vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  transition: all ease-in-out 0.3s;
+}
+
+.images:hover > .image {
+  opacity: 0.3;
+  transition: all ease-in-out 0.3s;
+}
+
+.images:hover > .image:hover {
+  opacity: 1;
+  border: 0.5em solid var(--clr-neon);
+  border-radius: 0.25em;
+  box-shadow: 0 0 5em var(--clr-neon);
+
+  transform: scale(1.1);
+  transition: all ease-in-out 0.3s;
+}

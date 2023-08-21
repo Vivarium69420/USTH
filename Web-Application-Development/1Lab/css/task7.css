@@ -1,0 +1,39 @@
+body {
+  background-color: #0f161e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+img {
+  width: 90%;
+  height: 90%;
+  border: 1px solid red;
+}
+
+.container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s;
+}
+
+img:hover {
+  box-shadow: inset 0 0 10px #ba313e, 0 0 40px #ba313e, 0 0 80px #ba313e;
+}
+
+#background-image {
+  height: 100%;
+  width: 100%;
+  background-image: url(../images/eclipse.jpg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+}

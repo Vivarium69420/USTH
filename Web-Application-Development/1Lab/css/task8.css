@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  font-size: 2em;
+  margin: 0.5em;
+}
+
+a:hover {
+  color: #0cf03a;
+}
+
+a:visited {
+  color: #b50e0e;
+}
+
+a:visited:hover {
+  color: #0cf03a;
+}

@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  height: 100dvh;
+  overflow: scroll;
+  background: #000000;
+  font-family: Hevetica, sans-serif;
+  color: rgb(211, 211, 211);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.card-container {
+  height: 450px;
+  width: 300px;
+  perspective: 800px;
+}
+
+.card-container:hover > .card {
+  cursor: pointer;
+  transform: rotateY(180deg);
+}
+
+.card {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transition: transform 100ms;
+  transform-style: preserve-3d;
+}
+
+.front,
+.back {
+  position: absolute;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  border-radius: 2rem;
+  box-shadow: 0 0 5px 2px rgba(50, 50, 50, 0.25);
+  backface-visibility: hidden;
+}
+
+.back {
+  transform: rotateY(180deg);
+  display: flex;
+  background: rgb(2, 0, 36);
+  background: radial-gradient(
+    circle,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(75, 69, 112, 1) 0%,
+    rgba(91, 76, 159, 1) 0%,
+    rgba(19, 11, 42, 1) 0%,
+    rgba(0, 0, 0, 1) 54%,
+    rgba(4, 1, 6, 1) 75%,
+    rgba(45, 27, 60, 1) 100%,
+    rgba(22, 10, 24, 1) 100%,
+    rgba(54, 18, 51, 1) 100%,
+    rgba(27, 13, 21, 1) 100%,
+    rgba(28, 14, 20, 1) 100%,
+    rgba(69, 38, 48, 1) 100%,
+    rgba(65, 36, 48, 1) 100%,
+    rgba(33, 20, 47, 1) 100%,
+    rgba(59, 8, 44, 1) 100%,
+    rgba(34, 16, 16, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  font-size: 1.5rem;
+  gap: 5rem;
+}
+
+.DDD {
+  background-image: url(../images/About/cat1.jpg);
+}
+
+.THD {
+  background-image: url(../images/About/cat2.jpg);
+}
+
+.MHD {
+  background-image: url(../images/About/cat3.jpg);
+}
+
+.NTD {
+  background-image: url(../images/About/cat4.jpg);
+}
+
+.NGD {
+  background-image: url(../images/About/cat5.jpg);
+}
