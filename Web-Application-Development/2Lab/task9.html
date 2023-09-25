@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="js/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <p>Paragraph</p>
+    <button>Button</button>
+    <div id="log"></div>
+  </body>
+  <script>
+    let last, timeDiff;
+    console.log(!!last);
+    $(document).ready(function () {
+      $("p").click(function () {
+        let dateTime = new Date();
+        let time = dateTime.getSeconds();
+        // for some reason, 0 is falsey in JS, so we need to check if last is undefined
+        // if it is, we set it to time, otherwise we set timeDiff to time - last
+        // and then set last to time
+        if (last) {
+          timeDiff = time - last;
+          $("#log").append(timeDiff + "<br />");
+        }
+        last = time;
+      });
+    });
+  </script>
+</html>

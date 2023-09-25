@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section
+      class="vh-100 bg-image"
+      style="background-image: url(./images/briar.jpg)"
+    >
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container h-100">
+          <div
+            class="row d-flex justify-content-center align-items-center h-100"
+          >
+            <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+              <div class="card" style="border-radius: 15p">
+                <div class="card-body p-5">
+                  <h2 class="text-uppercase text-center mb-5">
+                    Multiply and Divide two numbers:
+                  </h2>
+                  <form>
+                    <div class="form-group form-outline mb-4">
+                      <label for="1stNumber" class="form-label"
+                        >1st Number:</label
+                      >
+                      <input
+                        type="number"
+                        id="1stNumber"
+                        class="form-control form-control-lg"
+                      />
+                    </div>
+                    <div class="form-group form-outline mb-4">
+                      <label for="2ndNumber" class="form-label"
+                        >2nd Number</label
+                      >
+                      <input
+                        type="number"
+                        id="2ndNumber"
+                        class="form-control form-control-lg"
+                      />
+                    </div>
+
+                    <div
+                      class="d-flex justify-content-center align-items-center"
+                    >
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-lg gradient-custom-4 text-body m-2"
+                        onclick="multiply()"
+                      >
+                        Multiply
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary btn-lg gradient-custom-4 text-body m-2"
+                        onclick="divide()"
+                      >
+                        Divide
+                      </button>
+                    </div>
+                  </form>
+                  <h3 id="result" class="mt-2">The Result is:</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script>
+    function multiply() {
+      var firstNumber = document.getElementById("1stNumber").value;
+      var secondNumber = document.getElementById("2ndNumber").value;
+      var result = firstNumber * secondNumber;
+      document.getElementById("result").innerHTML = "The Result is: " + result;
+    }
+
+    function divide() {
+      var firstNumber = document.getElementById("1stNumber").value;
+      var secondNumber = document.getElementById("2ndNumber").value;
+      var result = firstNumber / secondNumber;
+      document.getElementById("result").innerHTML = "The Result is: " + result;
+    }
+  </script>
+</html>

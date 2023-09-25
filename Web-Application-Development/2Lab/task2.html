@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h1>Find the biggest values</h1>
+  </body>
+  <script>
+    let input = prompt("Enter five numbers separated by commas: ");
+    let arr = input.split(",");
+    let biggest = 0;
+
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] > biggest) {
+        biggest = arr[i];
+      }
+    }
+    document.write("The biggest number is: " + biggest);
+  </script>
+</html>

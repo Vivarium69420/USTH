@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="js/jquery-3.7.0.min.js"></script>
+  </head>
+  <body>
+    <a href="task1.html" id="toBeChange">Hello From Task 1</a>
+    <hr />
+    <button id="change">Change</button>
+    <button id="undo">Undo</button>
+  </body>
+  <script>
+    $(document).ready(function () {
+      $("#change").click(function () {
+        $("#toBeChange").attr("href", "task2.html");
+        $("#toBeChange").text("Hello From Task 2");
+      });
+    });
+  </script>
+</html>
