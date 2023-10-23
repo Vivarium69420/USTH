@@ -40,12 +40,14 @@ def compute_f1_score(X, y, theta):
     y_pred = sigmoid(X.dot(theta))
     y_pred = np.where(y_pred >= 0.5, 1, 0)
     tp = np.sum((y == 1) & (y_pred == 1))
+    tn = np.sum((y == 0) & (y_pred == 0))
     fp = np.sum((y == 0) & (y_pred == 1))
     fn = np.sum((y == 1) & (y_pred == 0))
     precision = tp / (tp + fp)
     recall = tp / (tp + fn)
+    accuracy = (tp + tn) / (tp + tn + fp + fn)
     f1_score = 2 * precision * recall / (precision + recall)
-    return f1_score
+    return f1_score, accuracy
 
 # predict function
 def predict(X, theta):
@@ -76,24 +78,41 @@ def gradient_descent_regularization(X, y, theta, alpha, num_iterations, lambd):
         cost = compute_cost(X, y, theta)
         cost_history.append(cost)
         f1_score = compute_f1_score(X, y, theta)
-        print("Iteration:", iteration, "Cost:", cost, "F1 score:", f1_score)
+        # print("Iteration:", iteration, "Cost:", cost, "F1 score:", f1_score)
         # print("Coefficients:", theta)
     return theta, cost_history, f1_score
 
-# # plot the cost function as a function of the iteration
-# plt.plot(range(num_iterations), cost_history)
-# plt.xlabel("Iteration")
-# plt.ylabel("Cost")
-# plt.title("Cost Function vs. Iteration")
-# plt.show()
+# plot the cost function as a function of the iteration
+def plot_cost_function(cost_history):
+    plt.plot(range(len(cost_history)), cost_history)
+    plt.xlabel('Iteration')
+    plt.ylabel('Cost')
+    plt.show()
+
+# plot the cost function with the theta values
+def plot_decision_boundary(X, y, theta):
+    plt.scatter(X[y == 0, 1], X[y == 0, 2], label='0')
+    plt.scatter(X[y == 1, 1], X[y == 1, 2], label='1')
+    x1 = np.arange(20, 110, 0.1)
+    x2 = -(theta[0] + theta[1] * x1) / theta[2]
+    plt.plot(x1, x2, label='Decision boundary')
+    plt.xlabel('Exam 1 score')
+    plt.ylabel('Exam 2 score')
+    plt.legend()
+    plt.show()
+
+# plot the data points and the decision boundary
 
 # Test the functions
 # theta, cost_history, f1_score = gradient_descent(X, y, theta, alpha, num_iterations)
 theta, cost_history, f1_score = gradient_descent_regularization(X, y, theta, alpha, num_iterations, lambd)
 
+# plot_cost_function(cost_history)
+plot_decision_boundary(X, y, theta)
+
 # print the final coefficients
 print("Final coefficients:", theta)
-print("F1 score:", f1_score)
+print("F1 score:", f1_score[0], "Accuracy:", f1_score[1])
 
 # Compare with scikit-learn's LogisticRegression
 reg = LogisticRegression()
