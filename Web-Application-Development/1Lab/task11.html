@@ -1,59 +1,177 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title></title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="css/task11.css" rel="stylesheet" />
+    <script src="js/jquery-3.7.0.min.js"></script>
+    <script src="js/script.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <div class="container">
+    <div class="container-1">
       <div class="header">
         <h1>Welcome To The Internet</h1>
       </div>
       <div class="main">
         <div class="main__left">
-          <a href="AI_Alleyway.html" class="category-box">
-            AI Generated Alleyway
-          </a>
-          <a href="Junji_Ito.html" class="category-box">Junji Ito Arts</a>
-          <a href="Fnaf.html" class="category-box">Five Night at Freddy</a>
-          <a href="About.html" class="category-box">About</a>
+          <button class="btn1 category-box">AI Generated Alleyway</button>
+          <button class="btn2 category-box">Junji Ito</button>
+          <button class="btn3 category-box">FNAF</button>
+          <button class="btn4 category-box">About</button>
         </div>
         <div class="main__right">
-          <a href="images/Fnaf/Ai.jpg" class="card">
-            <img src="images/Fnaf/Ai.jpg" alt="" />
-          </a>
-          <a href="images/Fnaf/fnaf2.jpg" class="card">
-            <img src="images/Fnaf/fnaf2.jpg" alt="" />
-          </a>
-          <a href="images/Junji Ito/Hole.jpg">
-            <img src="images/Junji Ito/Hole.jpg" alt="" />
-          </a>
-          <a href="images/Junji Ito/Spiral.jpg">
-            <img src="images/Junji Ito/Spiral.jpg" alt="" />
-          </a>
-          <a href="images/AI Alleyway/Neon.jpg">
-            <img src="images/AI Alleyway/Neon.jpg" alt="" />
-          </a>
-          <a href="images/AI Alleyway/Manga.jpg">
-            <img src="images/AI Alleyway/Manga.jpg" alt="" />
-          </a>
-          <a href="images/AI Alleyway/Weird.jpg">
-            <img src="images/AI Alleyway/Weird.jpg" alt="" />
-          </a>
-          <a href="images/Junji Ito/Junji Ito with Cat.png">
-            <img src="images/Junji Ito/Junji Ito with Cat.png" alt="" />
-          </a>
+          <div class="gallery-1 hide">
+            <a href="images/Fnaf/Ai.jpg" class="card">
+              <img src="images/Fnaf/Ai.jpg" alt="" />
+            </a>
+            <a href="images/Fnaf/fnaf2.jpg" class="card">
+              <img src="images/Fnaf/fnaf2.jpg" alt="" />
+            </a>
+            <a href="images/Junji Ito/Hole.jpg">
+              <img src="images/Junji Ito/Hole.jpg" alt="" />
+            </a>
+            <a href="images/Junji Ito/Spiral.jpg">
+              <img src="images/Junji Ito/Spiral.jpg" alt="" />
+            </a>
+            <a href="images/AI Alleyway/Neon.jpg">
+              <img src="images/AI Alleyway/Neon.jpg" alt="" />
+            </a>
+            <a href="images/AI Alleyway/Manga.jpg">
+              <img src="images/AI Alleyway/Manga.jpg" alt="" />
+            </a>
+            <a href="images/AI Alleyway/Weird.jpg">
+              <img src="images/AI Alleyway/Weird.jpg" alt="" />
+            </a>
+            <a href="images/Junji Ito/Junji Ito with Cat.png">
+              <img src="images/Junji Ito/Junji Ito with Cat.png" alt="" />
+            </a>
+          </div>
+          <div class="gallery-2 hide">
+            <a href="images/Junji Ito/Hole.jpg">
+              <img src="images/Junji Ito/Hole.jpg" alt="" />
+            </a>
+            <a href="images/Junji Ito/Spiral.jpg">
+              <img src="images/Junji Ito/Spiral.jpg" alt="" />
+            </a>
+            <a href="images/Junji Ito/Slug-Girl.jpg">
+              <img src="images/Junji Ito/Slug-Girl.jpg" alt="" />
+            </a>
+            <a href="images/Junji Ito/Kazuo-Umezu.jpg">
+              <img src="images/Junji Ito/Kazuo-Umezu.jpg" alt="" />
+            </a>
+          </div>
+          <div class="gallery-3 hide">
+            <a href="images/AI Alleyway/Neon.jpg">
+              <img src="images/AI Alleyway/Neon.jpg" alt="" />
+            </a>
+            <a href="images/AI Alleyway/Manga.jpg">
+              <img src="images/AI Alleyway/Manga.jpg" alt="" />
+            </a>
+            <a href="images/AI Alleyway/Weird.jpg">
+              <img src="images/AI Alleyway/Weird.jpg" alt="" />
+            </a>
+            <a href="images/AI Alleyway/Disney.jpg">
+              <img src="images/AI Alleyway/Disney.jpg" alt="" />
+            </a>
+          </div>
+          <div class="gallery-4">
+            <div class="container-2">
+              <div class="card-container">
+                <div class="card">
+                  <div class="front DDD"></div>
+                  <div class="back">
+                    <h1>BI12-074 Đoàn Đình Đăng</h1>
+                    <p>
+                      Học lắm zô xong cô hỏi câu tag "html" làm gì ko bt thì
+                      lmao
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-container">
+                <div class="card">
+                  <div class="front THD"></div>
+                  <div class="back">
+                    <h1>BI12-073 Trần Hải Đăng</h1>
+                    <p>À thế à ( ° ͜ʖ °)</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-container">
+                <div class="card">
+                  <div class="front MHD"></div>
+                  <div class="back">
+                    <h1>BI12-076 Mai Hải Đăng</h1>
+                    <p>Yep, I did those exercises</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-container">
+                <div class="card">
+                  <div class="front NTD"></div>
+                  <div class="back">
+                    <h1>BI12-099 Nguyễn Thanh Đức</h1>
+                    <p>
+                      Bạn đã gửi #1e4679 Bạn đã gửi #c7cfe0 Bạn đã gửi #e0e2ea
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-container">
+                <div class="card">
+                  <div class="front NGD"></div>
+                  <div class="back">
+                    <h1>BI12-110 Nguyễn Gia Dũng</h1>
+                    <p>Ah uh t xin vô web đấy quên mất :)))</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="footer">
         <small>&copy; Copyright 2023, G2-4</small>
       </div>
+      <script>
+        $(document).ready(function () {
+          $(".btn1").click(function () {
+            $(".gallery1").show();
+            $(".gallery2").hide();
+            $(".gallery3").hide();
+            $(".gallery4").hide();
+          });
+
+          $(".btn2").click(function () {
+            $(".gallery2").show();
+            $(".gallery1").hide();
+            $(".gallery3").hide();
+            $(".gallery4").hide();
+          });
+
+          $(".btn3").click(function () {
+            $(".gallery3").show();
+            $(".gallery2").hide();
+            $(".gallery1").hide();
+            $(".gallery4").hide();
+          });
+          $(".btn4").click(function () {
+            $(".gallery4").show();
+            $(".gallery2").hide();
+            $(".gallery3").hide();
+            $(".gallery1").hide();
+          });
+        });
+      </script>
     </div>
   </body>
 </html>
