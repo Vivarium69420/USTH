@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <title></title>
@@ -73,17 +73,15 @@
     </section>
   </body>
   <script>
+    let firstNumber = document.getElementById("1stNumber").value;
+    let secondNumber = document.getElementById("2ndNumber").value;
     function multiply() {
-      var firstNumber = document.getElementById("1stNumber").value;
-      var secondNumber = document.getElementById("2ndNumber").value;
-      var result = firstNumber * secondNumber;
+      let result = firstNumber * secondNumber;
       document.getElementById("result").innerHTML = "The Result is: " + result;
     }
 
     function divide() {
-      var firstNumber = document.getElementById("1stNumber").value;
-      var secondNumber = document.getElementById("2ndNumber").value;
-      var result = firstNumber / secondNumber;
+      let result = firstNumber / secondNumber;
       document.getElementById("result").innerHTML = "The Result is: " + result;
     }
   </script>
