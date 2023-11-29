@@ -41,11 +41,15 @@ def keyStream(x, y, z):
     return (x + y + z) % 2
 
 
-X = [1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1]
-Y = [1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 1, 1]
-Z = [1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 1, 1, 0, 0, 0, 0]
+X = [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1]
+Y = [1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 0, 1, 1, 0, 0]
+Z = [0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 1]
 
-n = 10
+n = 3
+keys = []
+
+keys.append(keyStream(X[18], Y[21], Z[22]))
+
 for i in range(n):
     m = majority(X[8], Y[10], Z[10])
 
@@ -58,8 +62,11 @@ for i in range(n):
     if Z[10] == m:
         shiftZ(Z)
 
-    print(keyStream(X[18], Y[21], Z[22]), end="")
-print()
-print(X)
-print(Y)
-print(Z)
+    keys.append(keyStream(X[18], Y[21], Z[22]))
+
+    print(X)
+    print(Y)
+    print(Z)
+    print()
+
+print(keys)
