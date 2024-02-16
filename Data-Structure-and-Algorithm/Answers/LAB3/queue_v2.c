@@ -1,3 +1,11 @@
+/*
+ * Implement a queue system for a commercial website.
+ * Website offers three items for sale (or a list of items)
+ * each item has a limited quantity in stock.
+ * Implement a queue of customers, each customer can
+ * buy only a few products among the available three items.
+ *
+ * */
 #include <stdio.h>
 #include <stdlib.h>
 
