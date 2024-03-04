@@ -1,0 +1,39 @@
+#version 130
+// Interpolated values from the vertex shaders
+in vec2 UV;
+
+// Ouput data
+out vec3 color;
+
+// Values that stay constant for the whole mesh.
+uniform sampler2D texture0;
+uniform sampler2D texture1;
+
+uniform float time;
+
+void main(){
+
+	/**
+	 * [NOTE]
+	 * Adjust the speed of breathing
+	 * Increasing this variable will make the texture1 breathing much faster
+	 */
+	int scalar = 3;
+
+	/**
+	 * [NOTE]
+	 * We all know that "sin(x)" runs from -1.0 to 1.0
+	 * Hence, "sin(x) + 1.0" runs from 0.0 to 2.0
+	 * We need to normalize the range [0.0, 2.0] to [0.0, 1.0]. Therefore, we multiply 0.5 with "sin(x) + 1.0"
+	 * --> Obtained the periodic function as "0.5 * (sin(x) + 1.0)"
+	 */
+
+	// The hard-coded numbers: 1.5, 2.5, 0.5 are just selected values
+
+	// Output color = color of the texture at the specified UV
+	color = mix(
+				1.5 * texture(texture0, UV).rgb,
+				2.5 * texture(texture1, UV).rgb * vec3(0.5*(sin(time*scalar) + 1.0), 0.5*(sin(time*scalar) + 1.0), 0.5*(sin(time*scalar) + 1.0)),
+				0.5
+			);
+}
