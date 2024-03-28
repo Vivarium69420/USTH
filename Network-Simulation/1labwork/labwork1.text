@@ -1,0 +1,6 @@
+Consider a C++ program ../ns-3.39/example/tutorial/first.cc in the source code of NS-3 (you installed in your computer)
+
+1. Run the program
+2. Explain the scenario
+3. What protocols are implemented in the example?
+4. What are the sender and receiver? How network traffic is generated?
